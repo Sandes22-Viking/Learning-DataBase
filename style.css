@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+    background-color: white;
+    height: 100vh;
+    padding: 0 45px;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.856);
+    color: white;
+    padding: 30px;
+    text-align: justify;
+    line-height: 30px;
+}
+
+h2 {
+    margin: 10px 0;
+}
