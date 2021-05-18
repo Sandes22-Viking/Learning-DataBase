@@ -37,6 +37,47 @@
             <li>the Government uses a database to store records of people's income tax payments.</li>
             <li>a database is used to keep track of all the drivers in central London who have (or haven't) paid the Congestion Charge.</li>
         </ul>
+
+        <h2>First Steps with MySQL</h2>
+        <p> At first, you must create an element. With the language is very easy to understand. For exemple:</p>
+        <code>
+            CREATE DATABASE databaseTest <br>
+            default character set utf8 <br>
+            default collate utf8_general_ci;
+        </code>
+
+        <p>And then you must create a call to use the databaseTest. Use this element:</p>
+        <code>
+            USE databaseTest;
+        </code>
+
+        <h2>Creating Tables</h2>
+        <code>
+            CREATE TABLE providers( <br>
+            codigo int(4) AUTO_INCREMENT, <br>
+            nome varchar(30) NOT NULL, <br>
+            email varchar(50), <br>
+            PRIMARY KEY (codigo)
+            );
+        </code>
+
+        <p>Now for the explanations of what the commands are about:</p>
+
+        <ul>
+            <li>AUTO_INCREMENT can be used to automate code that serves as the primary key of a table.</li>
+            <li>PRIMARY KEY defines the primary key of the table, that is, the field that serves as the key of the table and that cannot be repeated.</li>
+            <li>NOT NULL defines that a given field is mandatory.</li>
+        </ul>
+        <p>Now we already have a database and a table created, so it is possible to manipulate the data in the database.</p>
+
+        <h2>Insert Information in the Table</h2>
+        <p>Now we are going to insert some information in our table, for that we'll use the INSERT command.</p>
+        
+        <code>
+            INSERT INTO providers(codigo, nome, email) VALUES (null, “Ricardo”, “ricoarrigoni@gmail.com”) ;
+            INSERT INTO providers(codigo, nome, email) VALUES (null, “João”, “joao@gmail.com”) ;
+            INSERT INTO providers(codigo, nome, email) VALUES (null, “Maria”, “maria@gmail.com”) ;
+        </code>
     </div>
 
 </body>
