@@ -8,6 +8,7 @@
 body {
     background-color: white;
     height: 100vh;
+    widows: 100%;
     padding: 0 45px;
 }
 
@@ -19,10 +20,33 @@ body {
     line-height: 30px;
 }
 
+h1 {
+    color: blanchedalmond;
+}
+
 h2 {
     margin: 10px 0;
+    color: blanchedalmond;
 }
 
 ul {
     list-style-position: inside;
+}
+
+.codeSpace {
+    position: relative;
+    background: rgba(0, 0, 0, 0.253);
+    width: 100%;
+    padding: 20px;
+    margin: 3px;
+}
+
+code {
+    color: white;
+}
+
+@media screen and (max-width: 550px) {
+    body {
+        padding: 15px;
+    }
 }

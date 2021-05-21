@@ -40,26 +40,32 @@
 
         <h2>First Steps with MySQL</h2>
         <p> At first, you must create an element. With the language is very easy to understand. For exemple:</p>
-        <code>
-            CREATE DATABASE databaseTest <br>
-            default character set utf8 <br>
-            default collate utf8_general_ci;
-        </code>
+        <div class="codeSpace">
+            <code>
+                CREATE DATABASE databaseTest <br>
+                default character set utf8 <br>
+                default collate utf8_general_ci;
+            </code>
+        </div>
 
         <p>And then you must create a call to use the databaseTest. Use this element:</p>
-        <code>
-            USE databaseTest;
-        </code>
+        <div class="codeSpace">
+            <code>
+                USE databaseTest;
+            </code>
+        </div>
 
         <h2>Creating Tables</h2>
-        <code>
-            CREATE TABLE providers( <br>
-            codigo int(4) AUTO_INCREMENT, <br>
-            nome varchar(30) NOT NULL, <br>
-            email varchar(50), <br>
-            PRIMARY KEY (codigo)
-            );
-        </code>
+        <div class="codeSpace">
+            <code>
+                CREATE TABLE providers( <br>
+                codigo int(4) AUTO_INCREMENT, <br>
+                nome varchar(30) NOT NULL, <br>
+                email varchar(50), <br>
+                PRIMARY KEY (codigo)
+                );
+            </code>
+        </div>
 
         <p>Now for the explanations of what the commands are about:</p>
 
@@ -73,11 +79,13 @@
         <h2>Insert Information in the Table</h2>
         <p>Now we are going to insert some information in our table, for that we'll use the INSERT command.</p>
         
-        <code>
-            INSERT INTO providers(codigo, nome, email) VALUES (null, “Ricardo”, “ricoarrigoni@gmail.com”) ; <br>
-            INSERT INTO providers(codigo, nome, email) VALUES (null, “João”, “joao@gmail.com”) ; <br>
-            INSERT INTO providers(codigo, nome, email) VALUES (null, “Maria”, “maria@gmail.com”) ; <br>
-        </code>
+        <div class="codeSpace">
+            <code>
+                INSERT INTO providers(codigo, nome, email) VALUES (null, “Ricardo”, “ricoarrigoni@gmail.com”) ; <br>
+                INSERT INTO providers(codigo, nome, email) VALUES (null, “João”, “joao@gmail.com”) ; <br>
+                INSERT INTO providers(codigo, nome, email) VALUES (null, “Maria”, “maria@gmail.com”) ; <br>
+            </code>
+        </div>
 
         <h2>How to Drop Database</h2>
         <p>how to use the MySQL DROP DATABASE statement to delete an existing database in the server.</p>
