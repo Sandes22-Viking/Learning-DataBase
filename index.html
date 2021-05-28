@@ -41,7 +41,7 @@
 
         <h2>First Steps with MySQL</h2>
         <p> At first, you must create an element. With the language is very easy to understand. For exemple:</p>
-        <div class="codeSpace">
+        <div class="CodeSpace">
             <code>
                 CREATE DATABASE databaseTest <br>
                 default character set utf8 <br>
@@ -50,14 +50,14 @@
         </div>
 
         <p>And then you must create a call to use the databaseTest. Use this element:</p>
-        <div class="codeSpace">
+        <div class="CodeSpace">
             <code>
                 USE databaseTest;
             </code>
         </div>
 
         <h2>Creating Tables</h2>
-        <div class="codeSpace">
+        <div class="CodeSpace">
             <code>
                 CREATE TABLE providers( <br>
                 codigo int(4) AUTO_INCREMENT, <br>
@@ -80,7 +80,7 @@
         <h2>Insert Information in the Table</h2>
         <p>Now we are going to insert some information in our table, for that we'll use the INSERT command.</p>
         
-        <div class="codeSpace">
+        <div class="CodeSpace">
             <code>
                 INSERT INTO providers(codigo, nome, email) VALUES (null, “Ricardo”, “ricoarrigoni@gmail.com”) ; <br>
                 INSERT INTO providers(codigo, nome, email) VALUES (null, “João”, “joao@gmail.com”) ; <br>
@@ -95,20 +95,24 @@
         <ul>
             <div class="ManipulateDatabase">
                 <li>Manipulate Database</a></li>
-                <code>
-                    CREATE DATABASE databaseTest
-                    default character set utf8
-                    default collate utf8_general_ci;
-                </code>
+                <div class="CodeSpace">
+                    <code>
+                        CREATE DATABASE databaseTest <br>
+                        default character set utf8 <br>
+                        default collate utf8_general_ci;
+                    </code>
+                </div>
             </div>
 
             <div class="ManipulateTables">
                 <li>Manipulate Tables</li>
-                <code>
-                    CREATE TABLE providers(
-                    nome varchar(30) NOT NULL,
-                    email varchar(50);
-                </code>
+                <div class="CodeSpace">
+                    <code>
+                        CREATE TABLE providers( <br>
+                        nome varchar(30) NOT NULL, <br>
+                        email varchar(50);
+                    </code>
+                </div>
             </div>
 
             <div class="PrimaryKey">
@@ -116,21 +120,25 @@
                 <p>The PRIMARY KEY constraint uniquely identifies each record in a table.
                     Primary keys must contain UNIQUE values, and cannot contain NULL values.
                     A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).</p>
-                <code>
-                    CREATE TABLE providers(
-                    codigo int(4) AUTO_INCREMENT,
-                    nome varchar(30) NOT NULL,
-                    email varchar(50),
-                    PRIMARY KEY (codigo) );
-                </code>
+                <div class="CodeSpace">
+                    <code>
+                        CREATE TABLE providers( <br>
+                        codigo int(4) AUTO_INCREMENT, <br>
+                        nome varchar(30) NOT NULL, <br>
+                        email varchar(50), <br>
+                        PRIMARY KEY (codigo) );
+                    </code>
+                </div>
             </div>
 
             <div class="Describe">
                 <li>Describe</li>
                 <p>The DESCRIBE statement is used more to obtain information about a table structure while EXPLAIN statement is used to obtain a query execution plan.</p>
-                <code>
-                    DESCRIBE table providers;
-                </code>
+                <div class="CodeSpace">
+                    <code>
+                        DESCRIBE table providers;
+                    </code>
+                </div>
             </div>
 
             <div class="Alter">
@@ -138,42 +146,93 @@
                 <p>The alter command is used when we want to modify a database or any object contained in the database.</p>
                 
                 <p>It is possible to change the structure of a table in MySQL after it has been created, adding or deleting attributes (fields). We use the ALTER TABLE command for this</p>
-                <code>
-                    ALTER TABLE providers
-                    DROP COLUMN email;
-                </code>
+                <div class="CodeSpace">
+                    <code>
+                        ALTER TABLE providers <br>
+                        DROP COLUMN email;
+                    </code>
+                </div>
                 <p>With this <code>DROP COLUMN</code> you can delete a column of your table.</p>
 
-                <code>
-                    ALTER TABLE providers
-                    ADD COLUMN email;
-                </code>
+                <div class="CodeSpace">
+                    <code>
+                        ALTER TABLE providers <br>
+                        ADD COLUMN email;
+                    </code>
+                </div>
                 <p>And the same, you can add a column.</p>
 
                 <p>You can exclude a primary key (or other constraint)</p>
-                <code>
-                    ALTER TABLE providers
-                    DROP primary key;
-                </code>
+                <div class="CodeSpace">
+                    <code>
+                        ALTER TABLE providers <br>
+                        DROP primary key;
+                    </code>
+                </div>
             </div>
 
             <div class="update">
                 <li>Update</li>
                 <p>The update command has a syntax very similar to that of INSERT, but it is used to update database records.</p>
-                <code>
-                    UPDATE providers
-                    SET email = 'erick-sandes@hotmail.com'
-                    WHERE codigo = '2'
-                </code>
+                <div class="CodeSpace">
+                    <code>
+                        UPDATE providers <br>
+                        SET email = 'erick-sandes@hotmail.com' <br>
+                        WHERE codigo = '2';
+                    </code>
+                </div>
                 <p>With this command there will be an update, modifying the desired part located by the primary key.</p>
             </div>
             
-            <li>Delete</li>
-            <li>Truncate</li>
-            <li>Delete Tables</li>
-            <li>Insert</li>
-            <li>Select</li>
-            <li>Clausule Order By</li>
+            <div class="Delete">
+                <li>Delete</li>
+                <p>The delete command should never be used without the WHERE clause. Otherwise, it will delete all the records in the table. Whenever you want to delete a record, you probably want to delete one in particular. Thus, it is always important to use WHERE, as shown in the example below.</p>
+                <div class="CodeSpace">
+                    <code>
+                        DELETE FROM providers <br> WHERE id = 1;
+                    </code>
+                </div>
+                <p>In this way, you will be deleting the record that contains id 1.</p>
+            </div>
+
+            <div class="Truncate">
+                <li>Truncate</li>
+                <p>The TRUNCATE TABLE command allows you to remove all rows from a table in a single operation, without recording deletions for individual rows. The TRUNCATE TABLE is equivalent to executing the DELETE statement, but without using the WHERE clause. Therefore, it is used to completely delete the contents of a table in MySQL.</p>
+                <div class="CodeSpace">
+                    <code>
+                        TRUNCATE TABLE providers;
+                    </code>
+                </div>
+            </div>
+
+            <div class="DeleteTable">
+                <li>Delete Tables</li>
+                <p>The DROP TABLE statement allows a table to be removed from a MySQL database. This statement deletes the entire structure as well as the content of the table.</p>
+                <div class="CodeSpace">
+                    <code>
+                        DROP TABLE providers;
+                    </code>
+                </div>
+            </div>
+
+            <div class="Insert">
+                <li>Insert</li>
+                
+            </div>
+
+            <div class="Select">
+                <li>Select</li>
+                <p>The select command is quite simple and, for you, it shows the data in the table. Its syntax can be used in some ways, such as:</p>
+                <div class="CodeSpace">
+                    <code>
+                        SELECT * FROM TABLE_NAME;
+                    </code>
+                </div>
+            </div>
+            
+            <div class="ClausuleOrderBy">
+                <li>Clausule Order By</li>
+            </div>
             <li>Clausule Where</li>
             <li>Like</li>
             <li>Between and / Not Between</li>
