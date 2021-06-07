@@ -293,7 +293,18 @@
                 </main>
             </div>
 
-            <li>Like</li>
+            <div class="Like">
+                <li>Like</li>
+                <main class="LikeMain">
+                    <p>When we're selecting values in MySQL, on many occasions we don't want specific data, but values that contain part of what we'd like to find. LIKE can take two wildcard characters to replace the parts of the values that we don't know or want to omit.</p>
+                    <div class="CodeSpace">
+                        <code>
+                            SELECT * FROM providers WHERE nome LIKE 'Luiz%';
+                        </code>
+                    </div>
+                    <p>With the above Code, the result of the selection will bring all the names that involve what is typed between the quotes. Translate the % as 'Something'. With that = 'L%', it ends up being read as 'L and something else'. Which will return all the data for a given column that starts with L.</p>
+                </main>
+            </div>
 
             <div class="BB">
                 <li>Between and / Not Between</li>
