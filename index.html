@@ -336,10 +336,73 @@
                 </main>
             </div>
             
-            <li>Manipulating attributes and tuples in data visualization</li>
-            <li>Distinct</li>
-            <li>Function AVG</li>
-            <li>Function COUNT</li>
+            <div class="Visualization">
+                <li>Manipulating attributes and tuples in data visualization</li>
+                <main class="VisualizationMain">
+                    <p>Change attribute titles in the search result:</p>
+
+                    <div class="CodeSpace">
+                        <code>select cli_codigo 'Customer Code', <br> cli_name 'Customer Name', <br> cli_cidade 'customer city', <br> cli_sexo 'Sex' from customers;</code>
+                    </div>
+                    
+                    <p>or</p>
+
+                    <div class="CodeSpace">
+                        <code>select cli_codigo as 'Client Code', <br> cli_nome as 'Client Name', <br> cli_cidade as 'client city', <br> cli_sexo as 'Sex' from clients;</code>
+                    </div>
+                    
+                    <p>Multiply the value of cli_codigo by 2 in the search result:</p>
+
+                    <div class="CodeSpace">
+                        <code>select cli_codigo * 2 'Customer Code', <br> cli_name 'Customer Name', <br> cli_cidade 'customer city', <br> cli_sex 'Sex' from customers;</code>
+                    </div>
+                    
+                    <p>Add the value of cli_codigo with 2 in the search result:</p>
+
+                    <div class="CodeSpace">
+                        <code>select cli_codigo + 2 'Customer Code', <br> cli_nome 'Customer Name', <br> cli_cidade 'customer city', <br> cli_sex 'Sex' from customers;</code>
+                    </div>
+                </main>
+            </div>
+
+            <div class="Distinct">
+                <li>Distinct</li>
+                <main class="DistinctMain">
+                    <p>Does not show repeated information in the search result, for example:</p>
+
+                    <div class="CodeSpace">
+                        <code>select distinct codigo from providers</code>
+                    </div>
+                </main>
+            </div>
+
+            <div class="AVG">
+                <li>Function AVG</li>
+                <main class="AVG_Main">
+                    <p>
+                        This function calculates the average value of a given column (attribute). <br>
+                        Calculate the average salary by the attribute cli_salario and in the search results display the attribute as_average salary:
+                    </p>
+
+                    <div class="CodeSpace">
+                        <code>select avg (cli_salario) as media_salario from providers;</code>
+                    </div>
+                </main>
+            </div>
+
+            <div class="Count">
+                <li>Function COUNT</li>
+                <main class="CountMain">
+                    <p> 
+                        Counts all rows of a given table as an expression. <br>
+                        counts all records of the cli_codigo attribute:
+                    </p>
+
+                    <div class="CodeSpace">
+                        <code>select count (cli_codigo) from clients;</code>
+                    </div>
+                </main>
+            </div>
         </ul>
     </div>
 
