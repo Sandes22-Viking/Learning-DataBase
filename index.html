@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="medias/Iconshock-Real-Vista-Data-Database.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600&display=swap" rel="stylesheet">
     <title>DataBase MySQL</title>
 </head>
 <body>
 
     <div class="container">
+
         <h1>Introduce</h1>
 
         <h2>What is a database?</h2>
@@ -94,8 +96,8 @@
         <h2>List of commands in MySQL</h2>
         <ul>
             <div class="ManipulateDatabase">
-                <li>Manipulate Database</a></li>
-                <main class="ManipulateDatabaseMain">
+                <li onclick="execute()" >Manipulate Database</li>
+                <main id="main">
                     <div class="CodeSpace">
                         <code>
                             CREATE DATABASE databaseTest <br>
@@ -107,8 +109,8 @@
             </div>
 
             <div class="ManipulateTables">
-                <li>Manipulate Tables</li>
-                <main class="ManipulateTablesMain">
+                <li onclick="execute_two()">Manipulate Tables</li>
+                <main id="main_two">
                     <div class="CodeSpace">
                         <code>
                             CREATE TABLE providers( <br>
@@ -120,8 +122,8 @@
             </div>
 
             <div class="PrimaryKey">
-                <li>Primary Key</li>
-                <main class="PrimaryKeyMain">
+                <li onclick="execute_three()">Primary Key</li>
+                <main id="main_three">
                     <p>The PRIMARY KEY constraint uniquely identifies each record in a table.
                         Primary keys must contain UNIQUE values, and cannot contain NULL values.
                         A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).</p>
@@ -138,8 +140,8 @@
             </div>
 
             <div class="Describe">
-                <main class="DescribeMain">
-                    <li>Describe</li>
+            <li onclick="execute_four()">Describe</li>
+                <main id="main_four">
                     <p>The DESCRIBE statement is used more to obtain information about a table structure while EXPLAIN statement is used to obtain a query execution plan.</p>
                     <div class="CodeSpace">
                         <code>
@@ -150,8 +152,8 @@
             </div>
 
             <div class="Alter">
-                <li>Alter</li>
-                <main class="AlterMain">
+                <li onclick="execute_five()">Alter</li>
+                <main id="main_five">
                     <p>The alter command is used when we want to modify a database or any object contained in the database.</p>
                 
                     <p>It is possible to change the structure of a table in MySQL after it has been created, adding or deleting attributes (fields). We use the ALTER TABLE command for this</p>
@@ -179,8 +181,8 @@
             </div>
 
             <div class="update">
-                <main class="updateMain">
-                    <li>Update</li>
+                <li onclick="execute_six()">Update</li>
+                <main id="main_six">
                     <p>The update command has a syntax very similar to that of INSERT, but it is used to update database records.</p>
                     <div class="CodeSpace">
                         <code>
@@ -192,10 +194,10 @@
                     <p>With this command there will be an update, modifying the desired part located by the primary key.</p>
                 </main>
             </div>
-            
+
             <div class="Delete">
-                <li>Delete</li>
-                <main class="DeleteMain">
+                <li onclick="execute_seven()">Delete</li>
+                <main id="main_seven">
                     <p>The delete command should never be used without the WHERE clause. Otherwise, it will delete all the records in the table. Whenever you want to delete a record, you probably want to delete one in particular. Thus, it is always important to use WHERE, as shown in the example below.</p>
                     <div class="CodeSpace">
                         <code>
@@ -207,8 +209,8 @@
             </div>
 
             <div class="Truncate">
-                <li>Truncate</li>
-                <main class="TruncateMain">
+                <li onclick="execute_eight()">Truncate</li>
+                <main id="main_eight">
                     <p>The TRUNCATE TABLE command allows you to remove all rows from a table in a single operation, without recording deletions for individual rows. The TRUNCATE TABLE is equivalent to executing the DELETE statement, but without using the WHERE clause. Therefore, it is used to completely delete the contents of a table in MySQL.</p>
                     <div class="CodeSpace">
                         <code>
@@ -219,8 +221,8 @@
             </div>
 
             <div class="DeleteTable">
-                <li>Delete Tables</li>
-                <main class="DeleteTableMain">
+                <li onclick="execute_nine()">Delete Tables</li>
+                <main id="main_nine">
                     <p>The DROP TABLE statement allows a table to be removed from a MySQL database. This statement deletes the entire structure as well as the content of the table.</p>
                     <div class="CodeSpace">
                         <code>
@@ -231,8 +233,8 @@
             </div>
 
             <div class="Insert">
-                <li>Insert</li>
-                <main class="InsertMain">
+                <li onclick="execute_ten()">Insert</li>
+                <main id="main_ten">
                     <p>The INSERT INTO statement is used to insert new records in a table.</p>
                     <div class="CodeSpace">
                         INSERT INTO table_name
@@ -242,8 +244,8 @@
             </div>
 
             <div class="Select">
-                <li>Select</li>
-                <main class="SelectMain">
+                <li onclick="execute_eleven()">Select</li>
+                <main id="main_eleven">
                     <p>The select command is quite simple and, for you, it shows the data in the table. Its syntax can be used in some ways, such as:</p>
                     <div class="CodeSpace">
                         <code>
@@ -254,11 +256,9 @@
             </div>
             
             <div class="ClausuleWhere">
-                <li>Clausule Where</li>
-                <main class="ClausuleWhereMain">
-                    <p>It makes it possible to restrict the data that are required, making it possible for them to appear in the search.
-
-                        <br>
+                <li onclick="execute_twelve()">Clausule Where</li>
+                <main id="main_twelve">
+                    <p>It makes it possible to restrict the data that are required, making it possible for them to appear in the search.<br>
                         Logical Operators:
                         <ul style="list-style-type: none;">
                             <li>= equal to</li>
@@ -278,8 +278,8 @@
             </div>
 
             <div class="ClausuleOrderBy">
-                <li>Clausule Order By</li>
-                <main class="ClausuleOrderByMain">
+                <li onclick="execute_thirteen()">Clausule Order By</li>
+                <main id="main_thirteen">
                     <p>
                         Changes the order in which the search results are presented, enabling them to be placed in ascending and descending order. Examples:
                         Sort by the cli_name attribute (in ascending alphabetical order):
@@ -294,8 +294,8 @@
             </div>
 
             <div class="Like">
-                <li>Like</li>
-                <main class="LikeMain">
+                <li onclick="execute_fourteen()">Like</li>
+                <main id="main_fourteen">
                     <p>When we're selecting values in MySQL, on many occasions we don't want specific data, but values that contain part of what we'd like to find. LIKE can take two wildcard characters to replace the parts of the values that we don't know or want to omit.</p>
                     <div class="CodeSpace">
                         <code>
@@ -307,8 +307,8 @@
             </div>
 
             <div class="BB">
-                <li>Between and / Not Between</li>
-                <main class="BB_main">
+                <li onclick="execute_fifteen()">Between and / Not Between</li>
+                <main id="main_fifteen">
                     <p>Lists data between two values. Examples:
                     Display data where the code is between 2 and 3:</p>
                     <div class="CodeSpace"><code>select * from clientes where codigo between 2 and 5;</code></div>
@@ -317,8 +317,8 @@
             </div>
 
             <div class="In_NotIn">
-                <li>In / Not in</li>
-                <main class="In_NotInMain">
+                <li onclick="execute_sixteen()">In / Not in</li>
+                <main id="main_sixteen">
                     <p>List of predefined values. Examples: <br>
                         Display data where providers contain the values 3 or 4 or 7
                     </p>
@@ -337,8 +337,8 @@
             </div>
             
             <div class="Visualization">
-                <li>Manipulating attributes and tuples in data visualization</li>
-                <main class="VisualizationMain">
+                <li onclick="execute_seventeen()">Manipulating attributes and tuples in data visualization</li>
+                <main id="main_seventeen">
                     <p>Change attribute titles in the search result:</p>
 
                     <div class="CodeSpace">
@@ -366,8 +366,8 @@
             </div>
 
             <div class="Distinct">
-                <li>Distinct</li>
-                <main class="DistinctMain">
+                <li onclick="execute_eighteen()">Distinct</li>
+                <main id="main_eighteen">
                     <p>Does not show repeated information in the search result, for example:</p>
 
                     <div class="CodeSpace">
@@ -377,8 +377,8 @@
             </div>
 
             <div class="AVG">
-                <li>Function AVG</li>
-                <main class="AVG_Main">
+                <li onclick="execute_nineteen()">Function AVG</li>
+                <main id="main_nineteen">
                     <p>
                         This function calculates the average value of a given column (attribute). <br>
                         Calculate the average salary by the attribute cli_salario and in the search results display the attribute as_average salary:
@@ -391,8 +391,8 @@
             </div>
 
             <div class="Count">
-                <li>Function COUNT</li>
-                <main class="CountMain">
+                <li onclick="execute_twenty()">Function COUNT</li>
+                <main id="main_twenty">
                     <p> 
                         Counts all rows of a given table as an expression. <br>
                         counts all records of the cli_codigo attribute:
