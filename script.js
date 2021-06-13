@@ -202,3 +202,7 @@ function myFunction() {
     var element = document.body;
     element.classList.toggle("dark-mode");
  }
+
+function myFunctiontwo(x) {
+    x.classList.toggle("fa-thumbs-down");
+}

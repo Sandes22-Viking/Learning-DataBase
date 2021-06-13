@@ -9,7 +9,7 @@ body {
     background-color: white;
     height: 100vh;
     width: 100%;
-    padding: 0 45px;
+    padding: 0 140px;
 }
 
 .dark-mode {
@@ -65,10 +65,14 @@ main {
 .CodeSpace {
     background: rgba(0, 0, 0, 0.253);
     transition: background-color 3s;
-    width: 56%;
+    width: 66%;
     padding: 10px;
     margin: 10px;
     text-align: center;
+}
+
+.CodeSpace:hover {
+    transform: scale3d(1s);
 }
 
 code {
@@ -79,8 +83,28 @@ div > main {
     display: none;
 }
 
-@media screen and (max-width: 550px) {
+.rate {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.822);
+    border-bottom: transparent;
+    border-radius: 5px;
+    margin: 20px 20px 0;
+    justify-content: center;
+}
+
+.fa {
+    margin-left: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.fa:hover {
+    color: rgb(0, 0, 192);
+}
+
+@media screen and (max-width: 850px) {
     body {
-        padding: 15px;
+        padding: 0 40px;
     }
 }
